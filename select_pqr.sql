@@ -1,3 +1,8 @@
+-- P: classe formada por produtos muito populares e que apresentam uma movimentação frequente;
+-- Q: produtos de média popularidade e que possuem uma frequência média de transações;
+-- R: esse grupo inclui itens de baixa popularidade e que não são movimentados com frequência;
+
+
 set @soma = 0;
 set @soma1 = 0;
 set @soma2 = 0;
@@ -24,7 +29,3 @@ where r.data between '2021-11-01' and '2021-11-30'
 and v.status=4 and r.removido=0 and vp.removido=0
 group by p.codigo
 order by qtd_vendida DESC, p.codigo ASC;
-
--- P: classe formada por produtos muito populares e que apresentam uma movimentação frequente;
--- Q: produtos de média popularidade e que possuem uma frequência média de transações;
--- R: esse grupo inclui itens de baixa popularidade e que não são movimentados com frequência;
