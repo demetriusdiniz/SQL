@@ -1,3 +1,8 @@
+-- Até 70% dos custos do Total Acumulado = Classe A; (mais importante)
+-- De 70% até 90% = Classe B; (importância média)
+-- Acima de 90% = Classe C; (menos importante)
+
+
 set @soma = 0;
 set @soma1 = 0;
 set @soma2 = 0;
@@ -25,12 +30,3 @@ where r.data between '2021-11-01' and '2021-11-30'
 and v.status=4 and r.removido=0 and vp.removido=0
 group by p.codigo
 order by valor_total DESC, p.codigo ASC;
-
-select * from venda_produto;
-select * from recebimento;
-select * from financeiro_caixa;
-select * from cliente_grupo;
-
--- Até 70% dos custos do Total Acumulado = Classe A; (mais importante)
--- De 70% até 90% = Classe B; (importância média)
--- Acima de 90% = Classe C; (menos importante)
